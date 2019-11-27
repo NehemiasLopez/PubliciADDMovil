@@ -24,6 +24,18 @@ const routes: Routes = [
         path: 'vistanegocio',
         loadChildren: () => import('../vistanegocio/vistanegocio.module').then( m => m.VistanegocioPageModule)
       },
+      {
+        path: 'cotizaciones',
+        loadChildren: () => import('../cotizaciones/cotizaciones.module').then( m => m.CotizacionesPageModule)
+      },
+      {
+        path: 'likes',
+        loadChildren: () => import('../likes/likes.module').then( m => m.LikesPageModule)
+      },
+      {
+        path: 'perfil',
+        loadChildren: () => import('../perfil/perfil.module').then( m => m.PerfilPageModule)
+      },
     ]
   }
 ];

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cotizaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+
+    <ion-item>
+      <ion-card>
+        <ion-grid>
+        <ion-row *ngFor="let listac of listacotizaciones">
+          <ion-col size="4">
+            <div>
+              <img src="https://publiciadd.000webhostapp.com/images/{{listac['foto']}}" />
+            </div>
+          </ion-col>
+          <ion-col size="8">
+            <div>
+              <ion-label>
+                <h2>{{listac.titulo}}</h2>
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

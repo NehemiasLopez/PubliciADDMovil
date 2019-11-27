@@ -1,22 +1,25 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>{{titulopage}}</ion-title>
-    <ion-segment [(ngModel)]="segmento">
-
-      <ion-segment-button value="PRODUCTOS">
-        <ion-label>PRODUCTOS</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="NOSOTROS">
-        <ion-label>NOSOTROS</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="UBICACIONES">
-          <ion-label>UBICACIONES</ion-label>
-        </ion-segment-button>
-
-    </ion-segment>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+    <ion-segment [(ngModel)]="segmento">
+
+        <ion-segment-button value="PRODUCTOS">
+          <ion-label>PRODUCTOS</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="NOSOTROS">
+          <ion-label>NOSOTROS</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="UBICACIONES">
+            <ion-label>UBICACIONES</ion-label>
+          </ion-segment-button>
+  
+      </ion-segment>
     <div [ngSwitch]="segmento">
         <div *ngSwitchCase="'PRODUCTOS'">
           <ion-grid>
@@ -33,7 +36,120 @@
           </ion-grid>
         </div>
         <div *ngSwitchCase="'NOSOTROS'">
-          <ion-label>Seccion Nosotros</ion-label>
+          <div *ngIf="nosotros[0].tokep == 1;else plantilla2">
+            <div *ngFor="let nosotro of nosotros">
+              <ion-card>
+                  <img class="Imagenp1" src="https://publiciadd.000webhostapp.com/images/{{imagenes[0].Foto}}" />
+              </ion-card>
+              <div>
+                <p class="titulo">
+                  {{nosotro['Historia']}}
+                </p>
+                <p>
+                    {{nosotro['DescH']}}
+                </p>
+              </div>
+              <ion-card>
+                  <img src="https://publiciadd.000webhostapp.com/images/{{imagenes[1].Foto}}" />
+              </ion-card>
+              <div>
+                <p class="titulo">
+                  {{nosotro['Mision']}}
+                </p>
+                <p>
+                  {{nosotro['DescM']}}
+                </p>
+              </div>
+              <div>
+                <p class="titulo">
+                  {{nosotro['Vision']}}
+                </p>
+                <p>
+                  {{nosotro['DescV']}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <ng-template #plantilla2>
+            <div *ngIf="show==2;else plantilla3">
+              <div>
+                <p class="titulo">
+                  Historia
+                </p>
+                <p>
+                  Donec magna odio Praesent massa arcu,t, cursus at lectus.
+                </p>
+              </div>
+              <div>
+                <ion-card>
+                    <img src="" />
+                </ion-card>
+              </div>
+              <div>
+                <p class="titulo">
+                  Mision
+                </p>
+                <p>
+                  Donec magna odio Praesent massa arcu,t, cursus at lectus.
+                </p>
+              </div>
+              <div>
+                <ion-card>
+                    <img src="" />
+                </ion-card>
+              </div>
+              <div>
+                <p class="titulo">
+                  Vision
+                </p>
+                <p>
+                  Donec magna odio Praesent massa arcu,t, cursus at lectus.
+                </p>
+              </div>
+              <div>
+                <ion-card>
+                    <img src="" />
+                </ion-card>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #plantilla3>
+            <div>
+              <p class="titulo">
+                Historia
+              </p>
+              <p>
+                Donec magna odio Praesent massa arcu,t, cursus at lectus.
+              </p>
+            </div>
+            <div>
+              <ion-card>
+                  <img src="" />
+              </ion-card>
+              <ion-card>
+                  <img src="" />
+              </ion-card>
+              <ion-card>
+                  <img src="" />
+              </ion-card>
+            </div>
+            <div>
+              <p class="titulo">
+                Vision
+              </p>
+              <p>
+                Donec magna odio Praesent massa arcu,t, cursus at lectus.
+              </p>
+            </div>
+            <div>
+              <p class="titulo">
+                Mision
+              </p>
+              <p>
+                Donec magna odio Praesent massa arcu,t, cursus at lectus.
+              </p>
+            </div>
+          </ng-template>
         </div>
         <div *ngSwitchCase="'UBICACIONES'">
           <ion-label>Seccion ubicaciones</ion-label>
