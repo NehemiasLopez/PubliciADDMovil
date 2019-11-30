@@ -25,7 +25,7 @@
           <ion-grid>
             <ion-row>
               <ion-col size="6" size-lg="4" size-md="4" *ngFor="let producto of productos">
-                <ion-card (click)="cambiarpagina()">
+                <ion-card (click)="cambiarpagina(producto.tokent,producto.tokenp)">
                   <img src="https://publiciadd.000webhostapp.com/images/{{producto['foto']}}"/>
                   <ion-card-header>
                     <ion-card-title>Q {{producto['precio']}}</ion-card-title>
@@ -39,7 +39,7 @@
           <div *ngIf="nosotros[0].tokep == 1;else plantilla2">
             <div *ngFor="let nosotro of nosotros">
               <ion-card>
-                  <img class="Imagenp1" src="https://publiciadd.000webhostapp.com/images/{{imagenes[0].Foto}}"/>
+                  <img class="Imagenp1" src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[0].Foto}}"/>
               </ion-card>
               <div>
                 <p class="titulo">
@@ -50,7 +50,7 @@
                 </p>
               </div>
               <ion-card>
-                  <img src="https://publiciadd.000webhostapp.com/images/{{imagenes[1].Foto}}"/>
+                  <img src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[1].Foto}}"/>
               </ion-card>
               <div>
                 <p class="titulo">
@@ -83,7 +83,7 @@
                 </div>
                 <div>
                   <ion-card>
-                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenes[0].Foto}}" />
+                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[0].Foto}}" />
                   </ion-card>
                 </div>
                 <div>
@@ -96,7 +96,7 @@
                 </div>
                 <div>
                   <ion-card>
-                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenes[1].Foto}}" />
+                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[1].Foto}}" />
                   </ion-card>
                 </div>
                 <div>
@@ -109,7 +109,7 @@
                 </div>
                 <div>
                   <ion-card>
-                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenes[2].Foto}}" />
+                      <img src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[2].Foto}}" />
                   </ion-card>
                 </div>
               </div>
@@ -129,13 +129,13 @@
                 <ion-card>
                   <ion-slides pager="true">
                     <ion-slide>
-                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenes[0].Foto}}"/>
+                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[0].Foto}}"/>
                     </ion-slide>
                     <ion-slide>
-                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenes[1].Foto}}"/>
+                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[1].Foto}}"/>
                     </ion-slide>
                     <ion-slide>
-                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenes[2].Foto}}"/>
+                      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesNS[2].Foto}}"/>
                     </ion-slide>
                   </ion-slides>
                 </ion-card>
@@ -160,12 +160,37 @@
           </ng-template>
         </div>
         <div *ngSwitchCase="'UBICACIONES'">
-          <div *ngIf="show == 1;else plantilla2">
+          <div *ngIf="ubicaciones[0].tokeU == 1;else plantilla2">
             <ion-card>
-              <img id="imgcarrusel" src="../assets/images/h1.jpg"/>
+              <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesUB[0].Foto}}"/>
               <ion-card-header>
-                <ion-card-title>Calle Suger</ion-card-title>
-                <ion-card-subtitle>1av. 4 calle galileo</ion-card-subtitle>
+                <ion-card-title>{{ubicaciones[0].Lugar}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[0].Direccion}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[0].PBX}}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+            <ion-card>
+              <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesUB[1].Foto}}"/>
+              <ion-card-header>
+                <ion-card-title>{{ubicaciones[1].Lugar}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[1].Direccion}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[1].PBX}}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+            <ion-card>
+              <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesUB[2].Foto}}"/>
+              <ion-card-header>
+                <ion-card-title>{{ubicaciones[2].Lugar}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[2].Direccion}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[2].PBX}}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+            <ion-card>
+              <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/images/{{imagenesUB[3].Foto}}"/>
+              <ion-card-header>
+                <ion-card-title>{{ubicaciones[3].Lugar}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[3].Direccion}}</ion-card-title>
+                <ion-card-title>{{ubicaciones[3].PBX}}</ion-card-title>
               </ion-card-header>
             </ion-card>
           </div>
@@ -173,21 +198,23 @@
             <div>
               <ion-card>
                 <ion-slides pager="true">
-                  <ion-slide>
-                    <img id="carruselU" src="../assets/images/h1.jpg"/>
+                  <ion-slide *ngFor="let imagen of imagenesUB">
+                    <img id="carruselU" src="https://publiciadd.000webhostapp.com/images/{{imagen.Foto}}"/>
                   </ion-slide>
                 </ion-slides>
               </ion-card>
               <ion-card>
                 <ion-card-header>
-                  <ion-card-title>Calle Suger</ion-card-title>
-                  <ion-card-subtitle>1av. 4 calle galileo</ion-card-subtitle>
+                  <ion-card-title>{{ubicaciones[0].Lugar}}</ion-card-title>
+                  <ion-card-title>{{ubicaciones[0].Direccion}}</ion-card-title>
+                  <ion-card-title>{{ubicaciones[0].PBX}}</ion-card-title>
                 </ion-card-header>
               </ion-card>
               <ion-card>
                 <ion-card-header>
-                  <ion-card-title>Calle Suger</ion-card-title>
-                  <ion-card-subtitle>1av. 4 calle galileo</ion-card-subtitle>
+                  <ion-card-title>{{ubicaciones[1].Lugar}}</ion-card-title>
+                  <ion-card-title>{{ubicaciones[1].Direccion}}</ion-card-title>
+                  <ion-card-title>{{ubicaciones[1].PBX}}</ion-card-title>
                 </ion-card-header>
               </ion-card>
             </div>
