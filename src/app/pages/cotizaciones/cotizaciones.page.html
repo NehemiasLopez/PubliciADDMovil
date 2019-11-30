@@ -1,16 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cotizaciones</ion-title>
+    <ion-title>Cotizaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
   <ion-list>
 
-    <ion-item>
+    <ion-item *ngFor="let listac of listacotizaciones" (click)="verlista('listac.id_tienda','listac.id_cotizacion')">
       <ion-card>
-        <ion-grid>
-        <ion-row *ngFor="let listac of listacotizaciones">
+        <ion-row>
           <ion-col size="4">
             <div>
               <img src="https://publiciadd.000webhostapp.com/images/{{listac['foto']}}" />
@@ -24,7 +23,6 @@
             </div>
           </ion-col>
         </ion-row>
-        </ion-grid>
       </ion-card>
     </ion-item>
     

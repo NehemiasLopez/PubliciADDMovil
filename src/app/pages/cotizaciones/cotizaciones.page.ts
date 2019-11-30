@@ -17,6 +17,11 @@ export class CotizacionesPage implements OnInit {
     });
   }
 
+  verlista(tokenc:string, tokent:string){
+    console.log(tokenc);
+    console.log(tokenc);
+  }
+
   ngOnInit() {
   }
 

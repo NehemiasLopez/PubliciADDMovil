@@ -16,9 +16,11 @@ export class NegociosPage implements OnInit {
     });
   }
 
-  productos(token:string, nombretienda:string){
+  productos(token:string, nombretienda:string, idPNS:string, idPUB:string){
     let formdata = new FormData();
     formdata.append('token',token);
+    formdata.append('idPNS',idPNS);
+    formdata.append('idPUB',idPUB);
     this.http.post("https://publiciadd.000webhostapp.com/Webservice/Productos.php", formdata).subscribe(data =>{
       let navigationextras : NavigationExtras = {
         queryParams: {

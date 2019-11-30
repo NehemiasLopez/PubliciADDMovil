@@ -5,3 +5,21 @@ ion-toolbar{
     --background: #191919;
     color: #ffffff;
 }
+ion-card{
+    --background: #272727;
+    color: #ffffff;
+}
+ion-col{
+    padding: 0px;
+}
+#fotoproducto{
+    height: 150px;
+    object-fit: cover;
+}
+ion-slide{
+    height: 150px;
+}
+#imgcarrusel{
+    height: 150px;
+    object-fit: fill;
+}

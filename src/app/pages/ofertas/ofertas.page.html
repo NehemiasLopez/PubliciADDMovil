@@ -5,14 +5,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides pager="true">
-    <ion-slide>
-        <img src="../assets/images/botiquin.png"/>
-    </ion-slide>
-
-    <ion-slide>
-      <img src="../assets/images/botiquin.png"/>
-    </ion-slide>
-
-  </ion-slides>
+  <ion-card>
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let listacarr of listacarusel">
+          <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/{{listacarr['imagen']}}"/>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  <div>
+    <ion-row>
+      <ion-col size="6" *ngFor="let listap of listaproductos">
+        <ion-card>
+          <img id="fotoproducto" src="https://publiciadd.000webhostapp.com/images/{{listap['imagen']}}" />
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="6">
+                {{listap['precio']}}
+              </ion-col>
+              <ion-col size="6">
+                  {{listap['preciodesc']}}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div>
+    <ion-card *ngFor="let listab of listabanners">
+      <img id="imgcarrusel" src="https://publiciadd.000webhostapp.com/{{listab['imagen']}}"/>
+    </ion-card>
+  </div>
 </ion-content>

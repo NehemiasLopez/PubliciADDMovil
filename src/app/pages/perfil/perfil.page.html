@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-avatar>
+      <img id="fotoperfil" src="../assets/images/h1.jpg">
+    </ion-avatar>
+    <div id="nombreavatar">
+      <ion-label>Nehemias Lopez</ion-label>
+    </div>
+    <div id="barrainfo">
+      <ion-row>
+        <ion-col size="6">
+          <ion-row>
+              <ion-label id="numeros">10</ion-label>
+          </ion-row>
+          <ion-row>
+              <ion-label id="subtitulo">favoritos</ion-label>
+          </ion-row>
+        </ion-col>
+        <ion-col size="6">
+          <ion-row>
+              <ion-label id="numeros">10</ion-label>
+          </ion-row>
+          <ion-row>
+              <ion-label id="subtitulo">cotizaciones</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <ion-row>
+        <ion-col size="4" *ngFor="let listaL of listalikes">
+          <div class="cardsimg">
+            <img src="https://publiciadd.000webhostapp.com/images/{{listaL['imagen']}}" />
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
 </ion-content>

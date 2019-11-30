@@ -1,0 +1,25 @@
+ion-content{
+    --background: #191919;
+}
+#Titulo{
+    color: #ffffff; 
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+}
+#Precio{
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+}
+#Decripcion{
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+ion-card{
+    background: #272727;
+}
+.iconoback{
+    position: absolute;
+    color: #ffffff;
+    margin: 10px;
+    font-size: 1.2rem;
+}
