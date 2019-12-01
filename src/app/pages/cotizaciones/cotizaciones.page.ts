@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,  NavigationExtras} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -17,11 +17,21 @@ export class CotizacionesPage implements OnInit {
     });
   }
 
-  verlista(tokenc:string, tokent:string){
-    console.log(tokenc);
-    console.log(tokenc);
+  verlista(tokenc:string, title:string){
+    let formdata = new FormData();
+    formdata.append('tokenU', '2');
+    formdata.append('tokenC', tokenc);
+    this.http.post("https://publiciadd.000webhostapp.com/Webservice/Verlista.php",formdata).subscribe(data =>{
+      let navigationextras : NavigationExtras = {
+        queryParams: {
+          titulo : title,
+          data: JSON.stringify(data)
+        }
+      }
+      this.router.navigate(['/tabs/vercotizaciones'], navigationextras);
+    });
   }
-
+  
   ngOnInit() {
   }
 

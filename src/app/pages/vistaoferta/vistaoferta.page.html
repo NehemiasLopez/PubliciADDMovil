@@ -1,0 +1,20 @@
+<ion-content>
+  <div>
+    <a (click)="regresar()" class="iconoback"><ion-icon name="arrow-back"></ion-icon></a>
+    <img id="carruselU" src="https://publiciadd.000webhostapp.com/images/{{productos[0]['imagen']}}"/>
+  </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><ion-label id="Titulo">{{productos[0]['titulo']}}</ion-label></ion-card-title>
+        <ion-card-title><ion-label id="Precio">Precio en oferta: {{productos[0]['precio']}}</ion-label></ion-card-title>
+        <ion-card-title><ion-label id="Precio">Precio anterior: {{productos[0]['precioD']}}</ion-label></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label id="Decripcion">
+          {{productos[0]['descripcion']}}
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  

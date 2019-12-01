@@ -40,6 +40,14 @@ const routes: Routes = [
         path: 'vistaproducto',
         loadChildren: () => import('../vistaproducto/vistaproducto.module').then( m => m.VistaproductoPageModule)
       },
+      {
+        path: 'vercotizaciones',
+        loadChildren: () => import('../vercotizaciones/vercotizaciones.module').then( m => m.VercotizacionesPageModule)
+      },
+      {
+        path: 'vistaoferta',
+        loadChildren: () => import('../vistaoferta/vistaoferta.module').then( m => m.VistaofertaPageModule)
+      },
     ]
   }
 ];

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
   selector: 'app-ofertas',
   templateUrl: './ofertas.page.html',
@@ -26,6 +25,20 @@ export class OfertasPage implements OnInit {
           break;
         }
       }
+    });
+  }
+
+  enviardatos(tokent:string, tokenp:string){
+    let formdata = new FormData();
+    formdata.append('tokent', tokent);
+    formdata.append('tokenp', tokenp);
+    this.http.post("https://publiciadd.000webhostapp.com/Webservice/Verproducto.php", formdata).subscribe(data =>{
+      let navigationextras : NavigationExtras = {
+        queryParams: {
+          data: JSON.stringify(data)
+        }
+      }
+      this.router.navigate(['/tabs/vistaoferta'], navigationextras);
     });
   }
 

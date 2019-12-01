@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <a (click)="regresar()" class="iconoback"><ion-icon name="arrow-back"></ion-icon></a>
+      </ion-buttons>
+      <ion-title>Lista {{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let negocio of negocios">
+    <img slot="start" src="https://publiciadd.000webhostapp.com/images/{{negocio.imagen}}">
+    <ion-label>
+      <h2>{{negocio.titulo}}</h2>
+      <h3>Cantidad: {{negocio.cantidad}}</h3>
+      <p>Total: {{negocio.cantidad*negocio.precio}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

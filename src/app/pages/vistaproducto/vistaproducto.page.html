@@ -3,8 +3,8 @@
   <a (click)="regresar()" class="iconoback"><ion-icon name="arrow-back"></ion-icon></a>
   <img id="carruselU" src="https://publiciadd.000webhostapp.com/images/{{productos[0]['imagen']}}"/>
 </div>
-  <ion-card>
-    <ion-card-header>
+  <ion-card (click)="enviardatos(productos[0])">
+    <ion-card-header> 
       <ion-card-title><ion-label id="Titulo">{{productos[0]['titulo']}}</ion-label></ion-card-title>
       <ion-card-title><ion-label id="Precio">{{productos[0]['precio']}}</ion-label></ion-card-title>
     </ion-card-header>

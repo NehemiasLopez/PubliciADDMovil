@@ -20,7 +20,7 @@ export class PerfilPage implements OnInit {
       this.cantlike = JSON.parse(JSON.stringify(data)).cantlikes[0].cantlikes;
       this.cantlista = JSON.parse(JSON.stringify(data)).cantcotizaciones[0].cantlista;
     });
-  } 
+  }
 
   ngOnInit() {
   }

@@ -9,6 +9,9 @@ ion-col{
 ion-card{
     background: #272727;
 }
+.pdescuento{
+    background: #ff0000;
+}
 ion-card-title{
     color: #ffffff;
     font-size: 100%;
@@ -49,4 +52,8 @@ p{
     color: #ffffff;
     padding-left: 10px;
     font-size: 1.2rem;
+}
+
+.tachado {
+    text-decoration: line-through;
 }

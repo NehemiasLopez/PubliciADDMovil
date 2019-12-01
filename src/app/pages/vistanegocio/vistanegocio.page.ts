@@ -44,6 +44,20 @@ export class VistanegocioPage implements OnInit {
   regresar(){
     this.navCtrl.back();
   }
+
+  productodescuento(tokent:string, tokenp:string){
+      let formdata = new FormData();
+      formdata.append('tokent', tokent);
+      formdata.append('tokenp', tokenp);
+      this.http.post("https://publiciadd.000webhostapp.com/Webservice/Verproducto.php", formdata).subscribe(data =>{
+        let navigationextras : NavigationExtras = {
+          queryParams: {
+            data: JSON.stringify(data)
+          }
+        }
+        this.router.navigate(['/tabs/vistaoferta'], navigationextras);
+      });
+  }
   ngOnInit() {
     this.segmento="PRODUCTOS";
   }

@@ -25,12 +25,31 @@
           <ion-grid>
             <ion-row>
               <ion-col size="6" size-lg="4" size-md="4" *ngFor="let producto of productos">
-                <ion-card (click)="cambiarpagina(producto.tokent,producto.tokenp)">
-                  <img src="https://publiciadd.000webhostapp.com/images/{{producto['foto']}}"/>
-                  <ion-card-header>
-                    <ion-card-title>Q {{producto['precio']}}</ion-card-title>
-                  </ion-card-header>
-                </ion-card>
+                <div *ngIf="producto.descuento==false; else cardesc">
+                  <ion-card (click)="cambiarpagina(producto.tokent,producto.tokenp)">
+                    <img src="https://publiciadd.000webhostapp.com/images/{{producto['foto']}}"/>
+                    <ion-card-header>
+                      <ion-card-title>Q {{producto['precio']}}</ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                </div>
+                <ng-template #cardesc>
+                  <ion-card class="pdescuento" (click)="productodescuento(producto.tokent,producto.tokenp)">
+                    <img src="https://publiciadd.000webhostapp.com/images/{{producto['foto']}}"/>
+                    <ion-card-header>
+                      <ion-card-title>
+                        <ion-row>
+                          <ion-col size="6">
+                              <span class="tachado">{{producto['precio']}}</span>
+                          </ion-col>
+                          <ion-col size="6">
+                            {{producto['precioD']}}
+                          </ion-col>
+                        </ion-row>
+                      </ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                </ng-template>
               </ion-col>
             </ion-row>
           </ion-grid>

@@ -1,0 +1,23 @@
+img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+ion-content{
+    --background: #191919;
+}
+ion-toolbar{
+    --background: #191919;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+}
+ion-item{
+    --background: #272727;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+.iconoback{
+    color: #ffffff;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
